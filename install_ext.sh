@@ -1,6 +1,16 @@
-#wget https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-toolsai/vsextensions/jupyter/2020.12.414227025/vspackage -O jupyter.vsix
-#wget https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2020.12.424452561/vspackage -O python.vsix
+publisher="ms-python"
+extension_name="python"
+version="2020.12.424452561"
 
-#code-server --install-extension python.vsix
-#code-server --install-extension jupyter.vsix
+wget "https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${extension_name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+mv Microsoft.VisualStudio.Services.VSIXPackage ${publisher}.vsix
+code-server --install-extension ${publisher}.vsix
+
+publisher="ms-toolsai"
+extension_name="jupyter"
+version="2020.12.414227025"
+
+wget "https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${extension_name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+mv Microsoft.VisualStudio.Services.VSIXPackage ${publisher}.vsix
+code-server --install-extension ${publisher}.vsix
 
