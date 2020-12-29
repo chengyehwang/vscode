@@ -8,7 +8,7 @@ mv Microsoft.VisualStudio.Services.VSIXPackage /opt/${publisher}.vsix
 
 publisher="ms-toolsai"
 extension_name="jupyter"
-version="2020.12.1"
+version="2020.12.414227025"
 
 wget "https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${extension_name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
 mv Microsoft.VisualStudio.Services.VSIXPackage /opt/${publisher}.vsix
