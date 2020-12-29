@@ -33,6 +33,9 @@ COPY install_ext.sh /root/install_ext.sh
 RUN chmod 755 /root/install_ext.sh
 RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/install_ext.sh
 
+# Data sync for users who get image only
+COPY Dockerfile /opt/Dockerfile
+COPY start_vscode.sh /opt/start_vscode.sh
 # User jupyter & home init
 
 ARG USER_ID=1001
