@@ -23,6 +23,10 @@ export DISPLAY=:${port}
 # minio
 #./start_minio.sh
 
+echo "*******************************************"
+echo "open browser: https://$host_ext:8888"
+echo "*******************************************"
+
 #export NODE_OPTIONS=--max-old-space-size=4096
 #jupyter-lab --ip=$host --allow-root --no-browser 2>&1 | (trap '' INT ; exec sed -u "s@\(\s*\)http://$host:8888\(.*\)@\1http://$host_ext:8888\2\n\1or http://$host:8888\2\n@g")
-code-server --auth none --bind-addr $host:8888
+code-server --auth none --bind-addr $host:8888 --cert
