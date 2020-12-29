@@ -14,12 +14,12 @@ RUN cd /opt
 #RUN ./trace_processor --help
 
 # install conda
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-RUN chmod 755 ./Miniconda3-latest-Linux-x86_64.sh
-RUN ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /opt/miniconda3
-#RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.8.2-Linux-x86_64.sh
-#RUN chmod 755 ./Miniconda3-py38_4.8.2-Linux-x86_64.sh
-#RUN ./Miniconda3-py38_4.8.2-Linux-x86_64.sh -b -f -p /opt/miniconda3
+#RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+#RUN chmod 755 ./Miniconda3-latest-Linux-x86_64.sh
+#RUN ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /opt/miniconda3
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.8.2-Linux-x86_64.sh
+RUN chmod 755 ./Miniconda3-py38_4.8.2-Linux-x86_64.sh
+RUN ./Miniconda3-py38_4.8.2-Linux-x86_64.sh -b -f -p /opt/miniconda3
 
 SHELL ["/bin/bash", "-c", "-l"]
 
@@ -27,6 +27,12 @@ SHELL ["/bin/bash", "-c", "-l"]
 COPY install_conda_package.sh /root/install_conda_package.sh
 RUN chmod 755 /root/install_conda_package.sh
 RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/install_conda_package.sh
+
+# pip, jupyterlab extension or others
+COPY install_ext.sh /root/install_ext.sh
+RUN chmod 755 /root/install_ext.sh
+RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/install_ext.sh
+
 # User jupyter & home init
 
 ARG USER_ID=1001
