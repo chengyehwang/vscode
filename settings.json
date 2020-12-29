@@ -1,0 +1,4 @@
+{
+    "extensions.autoUpdate": false,
+    "python.condaPath": "/opt/miniconda3"
+}

@@ -36,6 +36,7 @@ RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/ins
 # Data sync for users who get image only
 COPY Dockerfile /opt/Dockerfile
 COPY start_vscode.sh /opt/start_vscode.sh
+COPY settings.json /opt/settings.json
 # User jupyter & home init
 
 ARG USER_ID=1001
