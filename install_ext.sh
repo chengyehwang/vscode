@@ -1,6 +1,6 @@
 publisher="ms-python"
 extension_name="python"
-version="2020.5.86806"
+version="2020.11.371526539"
 
 wget "https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${extension_name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
 mv Microsoft.VisualStudio.Services.VSIXPackage /opt/${publisher}.vsix
@@ -8,7 +8,7 @@ mv Microsoft.VisualStudio.Services.VSIXPackage /opt/${publisher}.vsix
 
 publisher="ms-toolsai"
 extension_name="jupyter"
-version="2020.12.414227025"
+version="2020.11.399280825"
 
 wget "https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${extension_name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
 mv Microsoft.VisualStudio.Services.VSIXPackage /opt/${publisher}.vsix
