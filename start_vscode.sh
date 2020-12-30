@@ -18,7 +18,7 @@ export DISPLAY=:${port}
 #mkdir -p ~/.jupyter/lab
 #cp -rf /jupyterlab/user-settings ~/.jupyter/lab/
 
-mkdir ~/.local/share/code-server/User
+mkdir -p ~/.local/share/code-server/User
 cp /opt/settings.json ~/.local/share/code-server/User/
 
 # minio
