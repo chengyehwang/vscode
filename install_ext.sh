@@ -15,7 +15,7 @@ else
 fi
 wget "https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${extension_name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
 mv Microsoft.VisualStudio.Services.VSIXPackage /opt/${publisher}.vsix
-code-server --install-extension /opt/${publisher}.vsix --extensions-dir /opt/ext --disable-update-check --force
+code-server --install-extension /opt/${publisher}.vsix --extensions-dir /opt/ext --disable-update-check --force --user-data-dir /opt
 
 done
 
