@@ -29,7 +29,7 @@ RUN chmod 755 /root/install_conda_package.sh
 RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/install_conda_package.sh
 
 # pip, jupyterlab extension or others
-COPY User /opt/User
+COPY User /opt/local/User
 COPY install_ext.sh /root/install_ext.sh
 RUN chmod 755 /root/install_ext.sh
 RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/install_ext.sh

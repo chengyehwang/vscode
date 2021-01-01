@@ -5,7 +5,7 @@ then
     publisher="ms-python"
     extension_name="python"
     version="2020.11.371526539"
-elif [ $index == 2 ]
+elif [ $index == -1 ]
 then
     publisher="ms-toolsai"
     extension_name="jupyter"
@@ -14,9 +14,9 @@ else
     exit 0
 fi
 wget "https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${extension_name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
-mv Microsoft.VisualStudio.Services.VSIXPackage /opt/${publisher}.vsix
-code-server --install-extension /opt/${publisher}.vsix --extensions-dir /opt/ext --disable-update-check --force --user-data-dir /opt
-
+mv Microsoft.VisualStudio.Services.VSIXPackage /opt/local/${publisher}.vsix
+code-server --install-extension /opt/local/${publisher}.vsix --extensions-dir /opt/ext --disable-update-check --force --user-data-dir /opt/local
+ls /opt/ext
 done
 
 echo "end"
