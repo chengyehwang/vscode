@@ -28,7 +28,8 @@ echo "*******************************************"
 echo "open browser: https://$host_ext:8888"
 echo "*******************************************"
 
+#ssh -N -L 7777:$host:8888 $host
+
 #export NODE_OPTIONS=--max-old-space-size=4096
 #jupyter-lab --ip=$host --allow-root --no-browser 2>&1 | (trap '' INT ; exec sed -u "s@\(\s*\)http://$host:8888\(.*\)@\1http://$host_ext:8888\2\n\1or http://$host:8888\2\n@g")
-code-server --auth none --bind-addr $host:8888 --cert
-#--extensions-dir /vscode/ext
+code-server --auth none --bind-addr $host:8888 --cert --extensions-dir /opt/ext
