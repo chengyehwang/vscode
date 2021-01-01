@@ -19,7 +19,7 @@ export DISPLAY=:${port}
 #cp -rf /jupyterlab/user-settings ~/.jupyter/lab/
 
 mkdir -p ~/.local/share/code-server/User
-cp /opt/settings.json ~/.local/share/code-server/User/
+cp /opt/local/User/settings.json ~/.local/share/code-server/User/
 
 # minio
 #./start_minio.sh
