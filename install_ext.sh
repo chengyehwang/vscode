@@ -1,11 +1,11 @@
 for index in {1..100};
 do
-if [ $index == 1 ]
+if [ $index == 2 ]
 then
     publisher="ms-python"
     extension_name="python"
     version="2020.11.371526539"
-elif [ $index == -1 ]
+elif [ $index == 1 ]
 then
     publisher="ms-toolsai"
     extension_name="jupyter"

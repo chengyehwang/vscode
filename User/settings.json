@@ -1,4 +1,5 @@
 {
     "extensions.autoUpdate": false,
-    "python.condaPath": "/opt/miniconda3"
+    "python.condaPath": "/opt/miniconda3",
+    "python.defaultInterpreterPath": "/opt/miniconda3/bin/python"
 }
