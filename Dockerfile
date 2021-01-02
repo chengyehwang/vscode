@@ -34,6 +34,12 @@ COPY install_ext.sh /root/install_ext.sh
 RUN chmod 755 /root/install_ext.sh
 RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/install_ext.sh
 
+# mkcert
+COPY User /opt/local/User
+COPY install_mkcert.sh /root/install_mkcert.sh
+RUN chmod 755 /root/install_mkcert.sh
+RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/install_mkcert.sh
+
 # Data sync for users who get image only
 COPY Dockerfile /opt/Dockerfile
 COPY start_vscode.sh /opt/start_vscode.sh
