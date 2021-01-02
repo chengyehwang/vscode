@@ -5,7 +5,7 @@ pull:
 	docker pull chengyehwang/vscode
 	docker tag chengyehwang/vscode vscode
 run:
-	docker run -i $(ARGS)  -p 9000:9000 -p 8080:8080 -p 8888:8888 -p 8880:8880 -p 6080:6080 -t vscode /vscode/start_vscode.sh $(IP)
+	docker run -i $(ARGS) -p 8888:8888 -t vscode /vscode/start_vscode.sh $(IP)
 cmd:
 	docker run -i $(ARGS) -t vscode /root/miniconda3/bin/ipython demo.py
 ut:
