@@ -21,8 +21,6 @@ export DISPLAY=:${port}
 mkdir -p ~/.local/share/code-server/User
 cp /opt/local/User/settings.json ~/.local/share/code-server/User/
 
-export CAROOT=./opt/ca ; /opt/mkcert $host_ext
-
 echo "*******************************************"
 echo "open browser: https://$host_ext:8888"
 echo "*******************************************"

@@ -8,6 +8,11 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y x11-apps psmisc 
 RUN mkdir -p /opt
 RUN cd /opt
 
+# mkcert
+COPY install_mkcert.sh /root/install_mkcert.sh
+RUN chmod 755 /root/install_mkcert.sh
+RUN /root/install_mkcert.sh
+
 # install trace_processor
 #RUN wget http://get.perfetto.dev/trace_processor
 #RUN chmod 755 trace_processor
@@ -33,12 +38,6 @@ COPY User /opt/local/User
 COPY install_ext.sh /root/install_ext.sh
 RUN chmod 755 /root/install_ext.sh
 RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/install_ext.sh
-
-# mkcert
-COPY User /opt/local/User
-COPY install_mkcert.sh /root/install_mkcert.sh
-RUN chmod 755 /root/install_mkcert.sh
-RUN /root/install_mkcert.sh
 
 RUN cd /opt ; /opt/mkcert 192.168.0.189 ; chmod 444 /opt/*.pem
 
