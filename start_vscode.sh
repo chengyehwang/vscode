@@ -29,4 +29,4 @@ echo "*******************************************"
 
 #export NODE_OPTIONS=--max-old-space-size=4096
 #jupyter-lab --ip=$host --allow-root --no-browser 2>&1 | (trap '' INT ; exec sed -u "s@\(\s*\)http://$host:8888\(.*\)@\1http://$host_ext:8888\2\n\1or http://$host:8888\2\n@g")
-code-server --auth none --bind-addr $host:8888 --cert --extensions-dir /opt/ext
+code-server --auth none --bind-addr $host:8888 --cert /vscode/${host_ext}.pem --cert-key /vscode/${host_ext}-key.pem --extensions-dir /opt/ext

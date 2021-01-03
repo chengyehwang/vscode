@@ -5,3 +5,4 @@ chmod 755 /opt/mkcert
 chmod 755 /opt/mkcert.exe
 /opt/mkcert -install
 cp -r /root/.local/share/mkcert /opt/ca
+chmod 444 /opt/ca/*.pem
