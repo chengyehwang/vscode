@@ -41,6 +41,10 @@ RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/ins
 
 RUN cd /opt ; /opt/mkcert 192.168.0.189 ; chmod 444 /opt/*.pem
 
+COPY install_custom.sh /root/install_custom.sh
+RUN chmod 755 /root/install_custom.sh
+RUN source /opt/miniconda3/etc/profile.d/conda.sh && conda activate && /root/install_custom.sh
+
 # Data sync for users who get image only
 COPY Dockerfile /opt/Dockerfile
 COPY start_vscode.sh /opt/start_vscode.sh

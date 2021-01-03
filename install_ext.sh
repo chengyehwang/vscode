@@ -10,6 +10,11 @@ then
     publisher="ms-toolsai"
     extension_name="jupyter"
     version="2020.11.399280825"
+elif [ $index == 3 ]
+then
+    publisher="RandomFractalsInc"
+    extension_name="vscode-vega-viewer"
+    version="9.4.0"
 else
     exit 0
 fi
