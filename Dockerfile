@@ -40,6 +40,8 @@ COPY install_mkcert.sh /root/install_mkcert.sh
 RUN chmod 755 /root/install_mkcert.sh
 RUN /root/install_mkcert.sh
 
+RUN cd /opt ; /opt/mkcert 192.168.0.189 ; chmod 444 /opt/*.pem
+
 # Data sync for users who get image only
 COPY Dockerfile /opt/Dockerfile
 COPY start_vscode.sh /opt/start_vscode.sh
