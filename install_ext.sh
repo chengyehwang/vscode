@@ -4,12 +4,14 @@ if [ $index == 2 ]
 then
     publisher="ms-python"
     extension_name="python"
-    version="2020.11.371526539"
+    version="2020.12.424452561"
+    #version="2020.11.371526539"
 elif [ $index == 1 ]
 then
     publisher="ms-toolsai"
     extension_name="jupyter"
-    version="2020.11.399280825"
+    version="2020.12.414227025"
+    #version="2020.11.399280825"
 elif [ $index == 3 ]
 then
     publisher="RandomFractalsInc"
